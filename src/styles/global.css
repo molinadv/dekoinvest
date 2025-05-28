@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'ITC Avant Garde Std Bk';
+    src: url('/fonts/ITCAvantGardeStd-Bk.woff2') format('woff2'),
+         url('/fonts/ITCAvantGardeStd-Bk.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ITC Avant Garde Std Bk';
+    src: url('/fonts/ITCAvantGardeStd-BkObl.woff2') format('woff2'),
+         url('/fonts/ITCAvantGardeStd-BkObl.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ITC Avant Garde Std Md';
+    src: url('/fonts/ITCAvantGardeStd-Md.woff2') format('woff2'),
+         url('/fonts/ITCAvantGardeStd-Md.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ITC Avant Garde Std Md';
+    src: url('/fonts/ITCAvantGardeStd-MdObl.woff2') format('woff2'),
+         url('/fonts/ITCAvantGardeStd-MdObl.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ITC Avant Garde Std Md';
+    src: url('/fonts/ITCAvantGardeStd-Bold.woff2') format('woff2'),
+         url('/fonts/ITCAvantGardeStd-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ITC Avant Garde Std Md';
+    src: url('/fonts/ITCAvantGardeStd-BoldObl.woff2') format('woff2'),
+         url('/fonts/ITCAvantGardeStd-BoldObl.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+}
+
+body {
+  font-family:'ITC Avant Garde Std Md';
+}

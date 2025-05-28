@@ -1,0 +1,74 @@
+---
+const tabs = [
+  { label: "¿Que haremos?", key: "que-haremos" },
+  { label: "¿Por qué este proyecto?", key: "por-que" },
+  { label: "Impacto positivo", key: "impacto" },
+  { label: "Algunos riesgos", key: "riesgos" },
+];
+---
+
+<div>
+  <ul id="tabs" class="flex justify-between bg-gray-300 items-center px-10 py-3 rounded-t-sm">
+    {tabs.map((tab, index) => (
+      <>
+        <li>
+          <button
+            class="tab-button text-center px-4 py-2"
+            data-key={tab.key}
+          >
+            {tab.label}
+          </button>
+        </li>
+        {index !== tabs.length - 1 && (
+          <li><div class="bg-gray-600 w-[0.8px] h-[2rem]"></div></li>
+        )}
+      </>
+    ))}
+  </ul>
+  <div class="bg-indigo-100 p-16 rounded-b-sm">
+    <div data-content="que-haremos" class="tab-content">
+      <p>
+        Lorem ipsum dolor sit amet...<br /><br />
+        Maxime fugit odio non atque...<br /><br />
+        Distinctio vero quas velit dolor delectus!
+      </p>
+    </div>
+    <div data-content="por-que" class="tab-content hidden">
+      <p>
+        Contenido de "¿Por qué este proyecto?"<br /><br />Explicación del motivo del proyecto.
+      </p>
+    </div>
+    <div data-content="impacto" class="tab-content hidden">
+      <p>
+        Contenido de "Impacto positivo"<br /><br />Resultados y beneficios esperados.
+      </p>
+    </div>
+    <div data-content="riesgos" class="tab-content hidden">
+      <p>
+        Contenido de "Algunos riesgos"<br /><br />Análisis de posibles dificultades.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+     const buttons = document.querySelectorAll(".tab-button") as NodeListOf<HTMLElement>;
+    const contents = document.querySelectorAll(".tab-content") as NodeListOf<HTMLElement>;
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const key = btn.dataset.key;
+
+        buttons.forEach((b) => b.classList.remove("bg-amber-400", "font-semibold", "shadow"));
+        btn.classList.add("bg-amber-400", "font-semibold", "shadow");
+
+        contents.forEach((content) => {
+          content.classList.toggle("hidden", content.dataset.content !== key);
+        });
+      });
+    });
+
+    buttons[0].click(); // Activar el primero por defecto
+  });
+</script>

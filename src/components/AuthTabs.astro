@@ -1,0 +1,108 @@
+---
+import LoginForm from "./LoginForm.astro"
+import SignupForm from "./SignupForm.astro"
+---
+
+<div class="flex flex-col justify-center w-96" id="auth-tabs">
+  <!-- Tabs -->
+  <div class="flex w-full">
+    <button
+      id="tab-login"
+      class="tab-btn w-1/2 py-2 bg-amber-400 text-black font-bold rounded-tl-lg transition-all duration-200 ease-in-out shadow-[0_4px_6px_-1px_rgba(0,0,0,0.3)]"
+      onclick="showTab('login')"
+    >
+      Iniciar sesión
+    </button>
+    <button
+      id="tab-signup"
+      class="tab-btn w-1/2 py-2 bg-white text-gray-600 rounded-tr-lg hover:bg-amber-100 transition-all duration-200 ease-in-out"
+      onclick="showTab('signup')"
+    >
+      Crear cuenta
+    </button>
+  </div>
+
+  <!-- Contenedor del formulario -->
+  <div class="bg-gray-200/75 px-6 py-8 rounded-b-xl">
+    <div id="form-login" class="form-tab block">
+      <LoginForm />
+    </div>
+    <div id="form-signup" class="form-tab hidden">
+      <SignupForm />
+    </div>
+  </div>
+
+  <!-- Script para cambiar pestañas -->
+  <script is:inline>
+    function showTab(tab) {
+      const loginTab = document.getElementById("tab-login");
+      const signupTab = document.getElementById("tab-signup");
+      const loginForm = document.getElementById("form-login");
+      const signupForm = document.getElementById("form-signup");
+
+      if (tab === "login") {
+        // Activar login
+        loginTab.classList.add(
+          "bg-amber-400",
+          "text-black",
+          "font-bold",
+          "shadow-[0_4px_6px_-1px_rgba(0,0,0,0.3)]"
+        );
+        loginTab.classList.remove(
+          "bg-white",
+          "text-gray-600",
+          "hover:bg-amber-100"
+        );
+
+        // Desactivar signup
+        signupTab.classList.remove(
+          "bg-amber-400",
+          "text-black",
+          "font-bold",
+          "shadow-[0_4px_6px_-1px_rgba(0,0,0,0.3)]"
+        );
+        signupTab.classList.add(
+          "bg-white",
+          "text-gray-600",
+          "hover:bg-amber-100"
+        );
+
+        // Mostrar login form
+        loginForm.classList.remove("hidden");
+        signupForm.classList.add("hidden");
+      } else {
+        // Activar signup
+        signupTab.classList.add(
+          "bg-amber-400",
+          "text-black",
+          "font-bold",
+          "shadow-[0_4px_6px_-1px_rgba(0,0,0,0.3)]"
+        );
+        signupTab.classList.remove(
+          "bg-white",
+          "text-gray-600",
+          "hover:bg-amber-100"
+        );
+
+        // Desactivar login
+        loginTab.classList.remove(
+          "bg-amber-400",
+          "text-black",
+          "font-bold",
+          "shadow-[0_4px_6px_-1px_rgba(0,0,0,0.3)]"
+        );
+        loginTab.classList.add(
+          "bg-white",
+          "text-gray-600",
+          "hover:bg-amber-100"
+        );
+
+        // Mostrar signup form
+        signupForm.classList.remove("hidden");
+        loginForm.classList.add("hidden");
+      }
+    }
+  </script>
+</div>
+
+

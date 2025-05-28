@@ -1,0 +1,66 @@
+---
+const projects = [
+  { title: "Electrical Engineering", description: "Descripción 1", img: "/images-carousel.png" },
+  { title: "Mechanical Design", description: "Descripción 2", img: "/images-carousel.png" },
+  { title: "Electrical Studies", description: "Descripción 3", img: "/images-carousel.png" },
+  { title: "Project Management", description: "Descripción 4", img: "/images-carousel.png" },
+  { title: "HVAC Design", description: "Descripción 5", img: "/images-carousel.png" },
+];
+---
+
+
+<div class="flex flex-col items-center gap-6 w-full">
+  <h2 class="text-3xl font-semibold">Proyectos</h2>
+
+  <div class="relative w-full max-w-5xl overflow-hidden">
+    <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
+      {projects.map((project, index) => (
+        <div class="carousel-card w-80 mx-4 flex-shrink-0 bg-gray-200 rounded-lg shadow text-center transition-all duration-300">
+          <img src={project.img} alt={project.title} class="w-full h-40 object-cover rounded-t" />
+          <div class="p-4">
+            <h3 class="text-lg font-bold">{project.title}</h3>
+            <p class="text-sm mt-1">{project.description}</p>
+            <span class="font-semibold">Leer más.</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <button onclick="rotate(-1)" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white p-2 rounded-full shadow">‹</button>
+    <button onclick="rotate(1)" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white p-2 rounded-full shadow">›</button>
+  </div>
+</div>
+
+<script is:inline>
+  const cards = document.querySelectorAll('.carousel-card');
+  let currentIndex = 1;
+
+  function updateCarousel() {
+    const total = cards.length;
+
+    cards.forEach((card, index) => {
+      const relativeIndex = (index - currentIndex + total) % total;
+
+      card.classList.add('hidden');
+      card.classList.remove('scale-105', 'bg-amber-400', 'opacity-60', 'z-10', 'bg-gray-200');
+
+      if ([total - 1, 0, 1].includes(relativeIndex)) {
+        card.classList.remove('hidden');
+        card.classList.add('bg-gray-200', 'opacity-60');
+      }
+
+      if (relativeIndex === 0) {
+        card.classList.remove('opacity-60', 'bg-gray-200');
+        card.classList.add('bg-amber-400', 'scale-105', 'z-10');
+      }
+    });
+  }
+
+  function rotate(direction) {
+    const total = cards.length;
+    currentIndex = (currentIndex + direction + total) % total;
+    updateCarousel();
+  }
+
+  document.addEventListener('DOMContentLoaded', updateCarousel);
+</script>

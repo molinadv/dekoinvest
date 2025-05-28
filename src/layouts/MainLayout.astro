@@ -1,0 +1,36 @@
+---
+import Footbar from "../components/Footbar.astro"
+import Navbar from "../components/Navbar.astro"
+import "../styles/global.css"
+
+interface Props {
+  tittle: string
+  backgroundUrl?: string
+}
+
+const { tittle, backgroundUrl } = Astro.props
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{tittle}</title>
+  </head>
+
+  <body class="m-0 p-0">
+    <div
+      class="min-h-screen bg-cover bg-center pt-7"
+      style=`background-image: url('${backgroundUrl}');`
+    >
+      <Navbar />
+      <slot name="hero"/>
+    </div>
+    <slot />
+    <Footbar/>
+  </body>
+</html>
+
+
