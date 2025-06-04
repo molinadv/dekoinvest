@@ -3,17 +3,24 @@ import MainLayout from "../layouts/MainLayout.astro";
 import AuthTabs from "../components/AuthTabs.astro";
 import TabComponent from "../components/TabComponent.astro";
 import ProjectCarousel from "../components/ProjectCarousel.astro";
+import OptionTabsWeb from "../components/OptionTabsWeb.astro";
+import OptionTabsMovil from "../components/OptionTabsMovil.astro";
+import InfoProjectsWeb from "../components/InfoProjectsWeb.astro";
+import InfoProjectsMovil from "../components/InfoProjectsMovil.astro";
+import TabComponentMovil from "../components/TabComponentMovil.astro";
+import ProjectCarouselMovil from "../components/ProjectCarouselMovil.astro";
+import ChartBar from "../components/ChartBar";
 
 const title = "Main Page";
 const backgroundUrl = "image-bg.png";
 ---
 
 <MainLayout tittle={title} backgroundUrl={backgroundUrl}>
-  <div slot="hero" class="flex justify-center gap-32 h-[80vh]">
-    <div class="flex flex-col w-2/5 justify-center gap-4">
-      <h2 class="text-6xl text-white">Lorem ipsum.</h2>
-      <h3 class="text-4xl text-white">Lorem ipsum.</h3>
-      <p class="text-xl text-white">
+  <div slot="hero" class="flex h-[80vh] px-6 md:justify-center">
+    <div class="flex flex-col justify-center gap-4">
+      <h2 class="text-5xl sm:text-6xl text-white">Lorem ipsum.</h2>
+      <h3 class="text-4xl sm:text-4xl text-white">Lorem ipsum.</h3>
+      <p class="text-lg sm:text-xl text-white">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit.
       </p>
       <button class="bg-amber-400 w-3xs py-1 px-2 rounded-md">
@@ -23,187 +30,18 @@ const backgroundUrl = "image-bg.png";
 
     <AuthTabs />
   </div>
-  <div class="px-36">
-    <div class="flex py-28 gap-20 justify-between">
-      <ul class="flex flex-col gap-20">
-        <li>
-          <button class="px-10 w-72 py-1.5 text-lg bg-amber-400 rounded-xl"
-            >Vitrina</button
-          >
-        </li>
-        <li>
-          <button class="px-10 w-72 py-1.5 text-lg bg-amber-400 rounded-xl"
-            >Deuda</button
-          >
-        </li>
-        <li>
-          <button class="px-10 w-72 py-1.5 text-lg bg-amber-400 rounded-xl"
-            >Lorem ipsum dolor.</button
-          >
-        </li>
-        <li>
-          <button class="px-10 w-72 py-1.5 text-lg bg-amber-400 rounded-xl"
-            >Porque elegirnos?</button
-          >
-        </li>
-      </ul>
-      <div class="bg-gray-400 w-[0.8px] h-[25rem]"></div>
-      <div>
-        <h2 class="text-center text-lg pb-3">Campañas para invertir</h2>
-        <div class="h-[22.5rem] flex flex-col gap-4 overflow-auto px-5">
-          <div
-            class="bg-gray-200 flex flex-col items-center p-10 gap-6 rounded-md"
-          >
-            <h3 class="text-xl">Proyecto: Conquistador Puerto Colombia</h3>
-            <div class="flex gap-4 items-center">
-              <button
-                class="bg-amber-400 rounded-md px-2 py-1 flex items-center gap-2"
-              >
-                <span
-                  ><svg
-                    class="w-5 h-5 inline"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 128 128"
-                    fill="currentColor"
-                  >
-                    <circle cx="64" cy="64" r="64" fill="#000000"></circle>
-                    <rect
-                      x="56"
-                      y="28"
-                      width="16"
-                      height="56"
-                      rx="8"
-                      fill="#FFC107"></rect>
-                    <circle cx="64" cy="100" r="10" fill="#FFC107"></circle>
-                  </svg>
-                </span>Ver mas
-              </button>
-              <p class="text-lg">Invierte a partir del: 10 de Octubre</p>
-            </div>
-          </div>
-          <div
-            class="bg-gray-200 flex flex-col items-center p-10 gap-6 rounded-md"
-          >
-            <h3 class="text-xl">Proyecto: Conquistador Puerto Colombia</h3>
-            <div class="flex gap-4 items-center">
-              <button
-                class="bg-amber-400 rounded-md px-2 py-1 flex items-center gap-2"
-              >
-                <span
-                  ><svg
-                    class="w-5 h-5 inline"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 128 128"
-                    fill="currentColor"
-                  >
-                    <circle cx="64" cy="64" r="64" fill="#000000"></circle>
-                    <rect
-                      x="56"
-                      y="28"
-                      width="16"
-                      height="56"
-                      rx="8"
-                      fill="#FFC107"></rect>
-                    <circle cx="64" cy="100" r="10" fill="#FFC107"></circle>
-                  </svg>
-                </span>Ver mas
-              </button>
-              <p class="text-lg">Invierte a partir del: 10 de Octubre</p>
-            </div>
-          </div>
-          <div
-            class="bg-gray-200 flex flex-col items-center p-10 gap-6 rounded-md"
-          >
-            <h3 class="text-xl">Proyecto: Conquistador Puerto Colombia</h3>
-            <div class="flex gap-4 items-center">
-              <button
-                class="bg-amber-400 rounded-md px-2 py-1 flex items-center gap-2"
-              >
-                <span
-                  ><svg
-                    class="w-5 h-5 inline"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 128 128"
-                    fill="currentColor"
-                  >
-                    <circle cx="64" cy="64" r="64" fill="#000000"></circle>
-                    <rect
-                      x="56"
-                      y="28"
-                      width="16"
-                      height="56"
-                      rx="8"
-                      fill="#FFC107"></rect>
-                    <circle cx="64" cy="100" r="10" fill="#FFC107"></circle>
-                  </svg>
-                </span>Ver mas
-              </button>
-              <p class="text-lg">Invierte a partir del: 10 de Octubre</p>
-            </div>
-          </div>
-          <div
-            class="bg-gray-200 flex flex-col items-center p-10 gap-6 rounded-md"
-          >
-            <h3 class="text-xl">Proyecto: Conquistador Puerto Colombia</h3>
-            <div class="flex gap-4 items-center">
-              <button
-                class="bg-amber-400 rounded-md px-2 py-1 flex items-center gap-2"
-              >
-                <span
-                  ><svg
-                    class="w-5 h-5 inline"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 128 128"
-                    fill="currentColor"
-                  >
-                    <circle cx="64" cy="64" r="64" fill="#000000"></circle>
-                    <rect
-                      x="56"
-                      y="28"
-                      width="16"
-                      height="56"
-                      rx="8"
-                      fill="#FFC107"></rect>
-                    <circle cx="64" cy="100" r="10" fill="#FFC107"></circle>
-                  </svg>
-                </span>Ver mas
-              </button>
-              <p class="text-lg">Invierte a partir del: 10 de Octubre</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="px-4 py-7 md:px-36 flex-col md:flex-row items-center">
+    <OptionTabsWeb />
+
+    <OptionTabsMovil />
+
     <div class="py-7">
-      <div class="flex rounded-lg bg-indigo-950">
-        <div
-          class="w-[38rem] h-[18rem] rounded-lg bg-cover"
-          style=`background-image: url('bg-map.png');`
-        >
-        </div>
-        <ul class="px-24 flex flex-col justify-center">
-          <li class="text-2xl text-amber-400">Proyecto: Conquistador</li>
-          <li class="text-2xl text-amber-400">Puerto Colombia</li>
-          <li class="py-6">
-            <p class="text-2xl text-amber-400">
-              Meta: <span class="text-white"> COP $800.000.000 </span>
-            </p>
-          </li>
-          <li>
-            <div class="flex h-10 items-center gap-10">
-              <button class="bg-amber-400 px-5 py-2 rounded-lg">Invertir</button
-              >
-              <ul>
-                <li class="text-amber-400">Fecha de inversión:</li>
-                <li class="text-white">A partir del</li>
-                <li class="text-white">10 de octubre 2025</li>
-              </ul>
-            </div>
-          </li>
-        </ul>
+      <div class="hidden md:flex rounded-lg bg-indigo-950">
+        <InfoProjectsWeb />
       </div>
+      <InfoProjectsMovil />
     </div>
-    <div class="py-7">
+    <div class="py-7 hidden md:block">
       <div class="py-7 px-16 bg-gray-300 text-xl rounded-lg">
         <h3 class="pb-2">Condiciones</h3>
         <ul class="flex justify-between">
@@ -231,12 +69,14 @@ const backgroundUrl = "image-bg.png";
     </div>
     <div class="py-15">
       <TabComponent />
+      <TabComponentMovil />
     </div>
     <div class="py-15">
       <ProjectCarousel />
+      <ProjectCarouselMovil />
     </div>
   </div>
-  <div class="bg-blue-950 py-10 flex flex-col items-center w-full">
+  <div class="bg-blue-950 py-10 md:flex flex-col items-center w-full hidden">
     <div class="text-white">
       <h3 class="text-xl text-center">Simulación</h3>
     </div>
@@ -436,45 +276,90 @@ const backgroundUrl = "image-bg.png";
       </div>
     </div>
   </div>
-  <section class="relative bg-white w-full py-16 px-6 md:px-20 flex items-start justify-between gap-10">
-  <!-- Fondo curvo arriba -->
-  <div class="absolute top-0 left-0 w-full h-48 bg-gradient-to-b from-gray-100 to-transparent rounded-b-full z-0"></div>
+  <section
+    class="bg-blue-950 max-w-4xl mx-auto py-10 flex flex-col items-center gap-4 px-6"
+  >
+  <h2 class="text-white text-2xl">Simulacion</h2>
+    <div class="bg-white p-3 rounded-lg">
+      <p>
+        Nuestro simulador de inversiones te permite explorar, de manera
+        interactiva, el potencial crecimiento de tu capital basado en variables
+        clave. La herramienta se centra en ofrecer un escenario bastante cercano
+        a la realidad, permitiéndote ajustar distintos parámetros para
+        visualizar cómo impactan en tus resultados.
+      </p>
+    </div>
+    <h2 class="text-2xl font-bold mb-4 text-white">Resumen de resultados</h2>
+    <ChartBar client:load />
+  </section>
+  <section
+    class="relative bg-white w-full py-16 px-6 md:px-20 hidden md:flex items-start justify-between gap-10"
+  >
+    <!-- Fondo curvo arriba -->
+    <div
+      class="absolute top-0 left-0 w-full h-48 bg-gradient-to-b from-gray-100 to-transparent rounded-b-full z-0"
+    >
+    </div>
 
-  <!-- Título -->
-  <div class="z-10 mt-10 md:mt-24 w-1/2">
-    <h2 class="text-4xl md:text-5xl font-light text-black">Contáctanos</h2>
-  </div>
+    <!-- Título -->
+    <div class="z-10 mt-10 md:mt-24 w-1/2">
+      <h2 class="text-4xl md:text-5xl font-light text-black">Contáctanos</h2>
+    </div>
 
-  <!-- Formulario -->
-  <div class="z-10 max-w-md w-full bg-white p-6">
-    <h3 class="text-lg font-medium mb-4">Formulario de contacto</h3>
-    <form class="flex flex-col gap-4">
-      <!-- Servicio -->
-      <select class="border border-gray-400 px-3 py-2 rounded-md text-sm">
-        <option>Servicio de interés</option>
-        <option>Instalación</option>
-        <option>Mantenimiento</option>
-        <option>Consultoría</option>
-      </select>
+    <!-- Formulario -->
+    <div class="z-10 max-w-md w-full bg-white p-6">
+      <h3 class="text-lg font-medium mb-4">Formulario de contacto</h3>
+      <form class="flex flex-col gap-4">
+        <!-- Servicio -->
+        <select class="border border-gray-400 px-3 py-2 rounded-md text-sm">
+          <option>Servicio de interés</option>
+          <option>Instalación</option>
+          <option>Mantenimiento</option>
+          <option>Consultoría</option>
+        </select>
 
-      <!-- Nombre y Apellido -->
-      <div class="flex gap-2">
-        <input type="text" placeholder="Nombre" class="w-1/2 border border-gray-400 px-3 py-2 rounded-md text-sm" />
-        <input type="text" placeholder="Apellido" class="w-1/2 border border-gray-400 px-3 py-2 rounded-md text-sm" />
-      </div>
+        <!-- Nombre y Apellido -->
+        <div class="flex gap-2">
+          <input
+            type="text"
+            placeholder="Nombre"
+            class="w-1/2 border border-gray-400 px-3 py-2 rounded-md text-sm"
+          />
+          <input
+            type="text"
+            placeholder="Apellido"
+            class="w-1/2 border border-gray-400 px-3 py-2 rounded-md text-sm"
+          />
+        </div>
 
-      <!-- Teléfono y Correo -->
-      <div class="flex gap-2">
-        <input type="text" placeholder="Teléfono" class="w-1/2 border border-gray-400 px-3 py-2 rounded-md text-sm" />
-        <input type="email" placeholder="Correo" class="w-1/2 border border-gray-400 px-3 py-2 rounded-md text-sm" />
-      </div>
+        <!-- Teléfono y Correo -->
+        <div class="flex gap-2">
+          <input
+            type="text"
+            placeholder="Teléfono"
+            class="w-1/2 border border-gray-400 px-3 py-2 rounded-md text-sm"
+          />
+          <input
+            type="email"
+            placeholder="Correo"
+            class="w-1/2 border border-gray-400 px-3 py-2 rounded-md text-sm"
+          />
+        </div>
 
-      <!-- Mensaje -->
-      <textarea placeholder="Mensaje" rows="4" class="border border-gray-400 px-3 py-2 rounded-md text-sm resize-none"></textarea>
+        <!-- Mensaje -->
+        <textarea
+          placeholder="Mensaje"
+          rows="4"
+          class="border border-gray-400 px-3 py-2 rounded-md text-sm resize-none"
+        ></textarea>
 
-      <!-- Botón enviar -->
-      <button type="submit" class="bg-amber-400 text-black py-2 px-6 rounded-md self-center">Enviar</button>
-    </form>
-  </div>
-</section>
+        <!-- Botón enviar -->
+        <button
+          type="submit"
+          class="bg-amber-400 text-black py-2 px-6 rounded-md self-center"
+          >Enviar</button
+        >
+      </form>
+    </div>
+  </section>
 </MainLayout>

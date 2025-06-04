@@ -1,0 +1,87 @@
+---
+
+---
+
+<script src="https://unpkg.com/alpinejs" defer></script>
+
+<div x-data="{ open: '1' }" class="w-[100vw] -mx-4 px-4 md:hidden space-y-2 overflow-x-hidden">
+  <!-- Ítem 1 -->
+  <div class="border rounded-md shadow overflow-hidden">
+    <button
+      @click="open === '1' ? open = null : open = '1'"
+      class="w-full flex justify-between items-center px-4 py-2 font-bold bg-amber-400 text-black"
+    >
+      ¿Qué haremos?
+      <svg
+        :class="open === '1' ? 'rotate-180' : ''"
+        class="w-4 h-4 transition-transform duration-300"
+        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+    <div x-show="open === '1'" x-collapse class="bg-gray-100 px-4 py-2 text-sm text-gray-700">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lorem urna...
+    </div>
+  </div>
+
+  <!-- Ítem 2 -->
+  <div class="border rounded-md shadow overflow-hidden">
+    <button
+      @click="open === '2' ? open = null : open = '2'"
+      class="w-full flex justify-between items-center px-4 py-2 font-bold bg-white text-black"
+    >
+      ¿Por qué este proyecto?
+      <svg
+        :class="open === '2' ? 'rotate-180' : ''"
+        class="w-4 h-4 transition-transform duration-300"
+        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+    <div x-show="open === '2'" x-collapse class="bg-gray-100 px-4 py-2 text-sm text-gray-700">
+      Texto explicativo del proyecto aquí...
+    </div>
+  </div>
+
+  <!-- Ítem 3 -->
+  <div class="border rounded-md shadow overflow-hidden">
+    <button
+      @click="open === '3' ? open = null : open = '3'"
+      class="w-full flex justify-between items-center px-4 py-2 font-bold bg-white text-black"
+    >
+      Impacto positivo
+      <svg
+        :class="open === '3' ? 'rotate-180' : ''"
+        class="w-4 h-4 transition-transform duration-300"
+        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+    <div x-show="open === '3'" x-collapse class="bg-gray-100 px-4 py-2 text-sm text-gray-700">
+      Detalles sobre el impacto ambiental, social, etc.
+    </div>
+  </div>
+
+  <!-- Ítem 4 -->
+  <div class="border rounded-md shadow overflow-hidden">
+    <button
+      @click="open === '4' ? open = null : open = '4'"
+      class="w-full flex justify-between items-center px-4 py-2 font-bold bg-white text-black"
+    >
+      Algunos riesgos
+      <svg
+        :class="open === '4' ? 'rotate-180' : ''"
+        class="w-4 h-4 transition-transform duration-300"
+        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+    <div x-show="open === '4'" x-collapse class="bg-gray-100 px-4 py-2 text-sm text-gray-700">
+      Información sobre posibles riesgos del proyecto.
+    </div>
+  </div>
+</div>

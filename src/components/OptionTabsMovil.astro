@@ -1,0 +1,126 @@
+---
+
+---
+
+<!-- Layout con Alpine.js funcional -->
+<script src="https://unpkg.com/alpinejs" defer></script>
+
+<div x-data="{ tab: 'vitrina' }" class="max-w-3xl mx-auto bg-white rounded-2xl shadow flex h-[36rem] overflow-hidden">
+
+  <!-- Columna lateral con botones -->
+  <ul class="flex flex-col w-20 bg-gray-100 divide-y divide-gray-300">
+    <li class="flex-1">
+      <button @click="tab = 'vitrina'" :class="tab === 'vitrina' ? 'bg-amber-400 text-black' : 'bg-white text-black'" class="w-full h-full flex flex-col items-center justify-center px-2 py-3">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="9" r="4" fill="#000"/>
+          <path d="M9 18h6v2a3 3 0 0 1-6 0v-2Z" fill="#000"/>
+          <path d="M12 2a7 7 0 0 0-3.27 13.25c.17.1.27.29.27.49V17h6v-1.26c0-.2.1-.39.27-.49A7 7 0 0 0 12 2Z" fill="#000"/>
+          <text x="12" y="10.5" text-anchor="middle" font-size="6" fill="#FFD700" font-family="Arial" font-weight="bold">$</text>
+        </svg>
+        <span class="text-xs font-bold mt-1">Vitrina</span>
+      </button>
+    </li>
+    <li class="flex-1">
+      <button @click="tab = 'deuda'" :class="tab === 'deuda' ? 'bg-amber-400' : 'bg-white'" class="w-full h-full flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#000">
+          <circle cx="12" cy="12" r="10" />
+          <text x="12" y="16" text-anchor="middle" font-size="12" fill="#FFF" font-family="Arial" font-weight="bold">$</text>
+        </svg>
+      </button>
+    </li>
+    <li class="flex-1">
+      <button @click="tab = 'l'" :class="tab === 'l' ? 'bg-amber-400' : 'bg-white'" class="w-full h-full flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000">
+          <path d="M8 5v14h8v-2H10V5H8z" />
+        </svg>
+      </button>
+    </li>
+    <li class="flex-1">
+      <button @click="tab = 'grupo'" :class="tab === 'grupo' ? 'bg-amber-400' : 'bg-white'" class="w-full h-full flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#000">
+          <circle cx="12" cy="7" r="2"/>
+          <circle cx="6" cy="9" r="1.5"/>
+          <circle cx="18" cy="9" r="1.5"/>
+          <path d="M9 14c0-1.1.9-2 2-2h2c1.1 0 2 .9 2 2v1h-6v-1z"/>
+          <path d="M4 15c0-.83.67-1.5 1.5-1.5h2c.83 0 1.5.67 1.5 1.5v1h-5v-1z"/>
+          <path d="M16 15c0-.83.67-1.5 1.5-1.5h2c.83 0 1.5.67 1.5 1.5v1h-5v-1z"/>
+        </svg>
+      </button>
+    </li>
+  </ul>
+
+  <!-- Contenido principal -->
+  <div class="flex-1 px-6 py-4 bg-white flex flex-col">
+    <h2 class="text-left font-medium text-base mb-3 border-b pb-2">Campañas para invertir</h2>
+
+    <div class="flex-1 overflow-y-auto flex flex-col gap-3 pr-2 h-full max-h-full">
+
+      <!-- Contenido para "vitrina" -->
+      <div x-show="tab === 'vitrina'" class="flex flex-col gap-3">
+        <!-- Campaña ACTIVA -->
+        <div class="flex items-center bg-gray-900 text-white rounded-xl overflow-hidden min-h-[7rem]">
+          <div class="flex-1 p-4">
+            <h3 class="text-sm font-bold text-amber-400 leading-tight">Proyecto: Conquistador Puerto Colombia</h3>
+            <p class="text-xs mt-1 leading-snug">Invierte a partir del: <span class="text-amber-400 font-semibold">10 de Octubre</span></p>
+          </div>
+          <div class="bg-amber-400 h-full px-4 flex items-center justify-center">
+            <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-.75-5.25v-3h1.5v3h-1.5zm0-4.5v-1.5h1.5v1.5h-1.5z" clip-rule="evenodd" />
+            </svg>
+            <span class="ml-1 text-sm font-bold text-black">Ver más</span>
+          </div>
+        </div>
+        <!-- Campaña INACTIVA -->
+        <div class="flex items-center bg-gray-200 text-black rounded-xl overflow-hidden min-h-[7rem]">
+          <div class="flex-1 p-4">
+            <h3 class="text-sm font-bold leading-tight">Proyecto: Conquistador Puerto Colombia</h3>
+            <p class="text-xs mt-1 leading-snug">Invierte a partir del: <span class="font-semibold">10 de Octubre</span></p>
+          </div>
+          <div class="bg-amber-400 h-full px-4 flex items-center justify-center">
+            <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-.75-5.25v-3h1.5v3h-1.5zm0-4.5v-1.5h1.5v1.5h-1.5z" clip-rule="evenodd" />
+            </svg>
+            <span class="ml-1 text-sm font-bold text-black">Ver más</span>
+          </div>
+        </div>
+          <!-- Campaña INACTIVA -->
+        <div class="flex items-center bg-gray-200 text-black rounded-xl overflow-hidden min-h-[7rem]">
+          <div class="flex-1 p-4">
+            <h3 class="text-sm font-bold leading-tight">Proyecto: Conquistador Puerto Colombia</h3>
+            <p class="text-xs mt-1 leading-snug">Invierte a partir del: <span class="font-semibold">10 de Octubre</span></p>
+          </div>
+          <div class="bg-amber-400 h-full px-4 flex items-center justify-center">
+            <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-.75-5.25v-3h1.5v3h-1.5zm0-4.5v-1.5h1.5v1.5h-1.5z" clip-rule="evenodd" />
+            </svg>
+            <span class="ml-1 text-sm font-bold text-black">Ver más</span>
+          </div>
+        </div>
+          <!-- Campaña INACTIVA -->
+        <div class="flex items-center bg-gray-200 text-black rounded-xl overflow-hidden min-h-[7rem]">
+          <div class="flex-1 p-4">
+            <h3 class="text-sm font-bold leading-tight">Proyecto: Conquistador Puerto Colombia</h3>
+            <p class="text-xs mt-1 leading-snug">Invierte a partir del: <span class="font-semibold">10 de Octubre</span></p>
+          </div>
+          <div class="bg-amber-400 h-full px-4 flex items-center justify-center">
+            <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-.75-5.25v-3h1.5v3h-1.5zm0-4.5v-1.5h1.5v1.5h-1.5z" clip-rule="evenodd" />
+            </svg>
+            <span class="ml-1 text-sm font-bold text-black">Ver más</span>
+          </div>
+        </div>
+      </div>
+      
+
+      
+      <!-- Otros tabs -->
+      <div x-show="tab === 'deuda'" class="text-sm text-center text-gray-600">Contenido de deuda</div>
+      <div x-show="tab === 'l'" class="text-sm text-center text-gray-600">Contenido de L</div>
+      <div x-show="tab === 'grupo'" class="text-sm text-center text-gray-600">Contenido del grupo</div>
+    </div>
+  </div>
+</div>
+
+
+
+
